@@ -29,25 +29,27 @@ export default function ThoughtScreen() {
         </View>
       </View>
 
-      <ContentContainer>
-        <Text style={styles.header}>
-          {messages.thought.question}
-        </Text>
+      <View style={{ flex: 1 }}>
+        <ContentContainer>
+          <Text style={styles.header}>
+            {messages.thought.question}
+          </Text>
 
-        <FlatList
-          data={reasons}
-          keyExtractor={(_, i) => i.toString()}
-          renderItem={({ item, index }) => (
-            <ColorCard
-              text={item}
-              color={STATUS_COLORS[index % STATUS_COLORS.length]}
-              delay={index * 200}
-            />
-          )}
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={styles.listContainer}
-        />
-      </ContentContainer>
+          <FlatList
+            data={reasons}
+            keyExtractor={(_, i) => i.toString()}
+            renderItem={({ item, index }) => (
+              <ColorCard
+                text={item}
+                color={STATUS_COLORS[index % STATUS_COLORS.length]}
+                delay={index * 200}
+              />
+            )}
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={styles.listContainer}
+          />
+        </ContentContainer>
+      </View>
     </SafeAreaView>
   );
 }
