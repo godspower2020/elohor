@@ -1,8 +1,8 @@
 export const messages = {
   valentine: {
-    title: "Happy Valentine’s Day ❤️",
+    title: "Happy Valentine, Elohor❤️",
     text:
-      "From the moment we started talking, I knew you were special. You’re a beautiful mix of a great friend and someone I’m honestly falling in like with. I’m really grateful to have you in my life.",
+      "From the moment we started talking, I knew you were special. You’re a beautiful mix of a great friend and someone I’m honestly falling in-like-with. I’m really grateful to have you in my life.",
   },
   intro: {
     title: "Why I think we should give this a shot",
