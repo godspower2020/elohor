@@ -3,7 +3,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import PrimaryButton from "@/components/primarybutton";
-import ContentContainer from "@/components/contentcontainer";
 import { messages } from "@/data/messages";
 
 export default function IntroScreen() {
@@ -22,22 +21,20 @@ export default function IntroScreen() {
       </TouchableOpacity>
 
       <View style={styles.content}>
-        <ContentContainer>
-            <Text style={styles.title}>
-            {messages.intro.title}
-            </Text>
+        <Text style={styles.title}>
+          {messages.intro.title}
+        </Text>
 
-            <Text style={styles.text}>
-            {messages.intro.text}
-            </Text>
+        <Text style={styles.text}>
+          {messages.intro.text}
+        </Text>
 
-            <PrimaryButton
-            label="In My Feelings"
-            backgroundColor="#3b82f6"
-            textColor="#fff"
-            onPress={() => router.push("/thought")}
-            />
-        </ContentContainer>
+        <PrimaryButton
+          label="In My Feelings"
+          backgroundColor="#3b82f6"
+          textColor="#fff"
+          onPress={() => router.push("/thought")}
+        />
       </View>
     </SafeAreaView>
   );

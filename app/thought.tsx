@@ -3,7 +3,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import ColorCard from "@/components/colorcard";
-import ContentContainer from "@/components/contentcontainer";
 import { STATUS_COLORS } from "@/helpers/colors";
 import { reasons } from "@/data/reasons";
 import { messages } from "@/data/messages";
@@ -29,27 +28,23 @@ export default function ThoughtScreen() {
         </View>
       </View>
 
-      <View style={{ flex: 1 }}>
-        <ContentContainer>
-          <Text style={styles.header}>
-            {messages.thought.question}
-          </Text>
+      <Text style={styles.header}>
+        {messages.thought.question}
+      </Text>
 
-          <FlatList
-            data={reasons}
-            keyExtractor={(_, i) => i.toString()}
-            renderItem={({ item, index }) => (
-              <ColorCard
-                text={item}
-                color={STATUS_COLORS[index % STATUS_COLORS.length]}
-                delay={index * 200}
-              />
-            )}
-            showsVerticalScrollIndicator={false}
-            contentContainerStyle={styles.listContainer}
+      <FlatList
+        data={reasons}
+        keyExtractor={(_, i) => i.toString()}
+        renderItem={({ item, index }) => (
+          <ColorCard
+            text={item}
+            color={STATUS_COLORS[index % STATUS_COLORS.length]}
+            delay={index * 200}
           />
-        </ContentContainer>
-      </View>
+        )}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.listContainer}
+      />
     </SafeAreaView>
   );
 }
