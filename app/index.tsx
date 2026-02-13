@@ -2,6 +2,7 @@ import { Text, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 import PrimaryButton from "@/components/primarybutton";
+import ContentContainer from "@/components/contentcontainer";
 import { messages } from "@/data/messages";
 
 export default function Index() {
@@ -14,20 +15,22 @@ export default function Index() {
       <Text style={styles.flower}>🌸</Text>
 
       <View style={styles.content}>
-        <Text style={styles.title}>
-          {messages.valentine.title}
-        </Text>
+        <ContentContainer>
+          <Text style={styles.title}>
+            {messages.valentine.title}
+          </Text>
 
-        <Text style={styles.text}>
-          {messages.valentine.text}
-        </Text>
+          <Text style={styles.text}>
+            {messages.valentine.text}
+          </Text>
 
-        <PrimaryButton
-          label="My Thoughts"
-          backgroundColor="rgba(214, 51, 132, 0.5)"
-          textColor="#fff"
-          onPress={() => router.push("/intro")}
-        />
+          <PrimaryButton
+            label="My Thoughts"
+            backgroundColor="rgba(214, 51, 132, 0.5)"
+            textColor="#fff"
+            onPress={() => router.push("/intro")}
+          />
+        </ContentContainer>
       </View>
     </SafeAreaView>
   );
