@@ -6,8 +6,10 @@ export default function ContentContainer({ children }: any) {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     width: "100%",
     alignSelf: "center",
     maxWidth: Platform.OS === "web" ? 520 : "100%",
   },
 });
+
